@@ -1,0 +1,24 @@
+### ✅ 2. Created with ❤️ by Shagwu 
+
+### ✅ 3. Git Instructions to Upload Your Project to GitHub
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Streamlit cache
+.streamlit/
+
+# Environment
+.env
+venv/
+env/
+
+# Credentials (do not share)
+credentials.json
+token.json
+
+# macOS or OS-specific files
+.DS_Store
+Thumbs.db
