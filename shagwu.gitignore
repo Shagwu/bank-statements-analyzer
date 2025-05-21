@@ -22,3 +22,4 @@ token.json
 # macOS or OS-specific files
 .DS_Store
 Thumbs.db
+client_secret_*.json
