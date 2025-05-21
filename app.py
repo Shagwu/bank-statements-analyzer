@@ -7,6 +7,12 @@ from pdfminer.pdfparser import PDFSyntaxError
 import io
 import gspread
 from google.oauth2.service_account import Credentials
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .env into environment
+
+CLIENT_SECRET_FILE = os.getenv("GOOGLE_CLIENT_SECRET_PATH")
 
 # ----------------------------- HELPER FUNCTIONS -----------------------------
 
@@ -126,12 +132,19 @@ if uploaded_file:
                     )
 
                 # Upload to Google Sheets
-                with st.expander("☁️ Upload to Google Sheets"):
-                    creds_json_str = st.text_area("Paste Google Service Account JSON here")
-                    sheet_name = st.text_input("Google Sheet Name", value="Bank Transactions")
-                    if st.button("Upload to Google Sheets"):
-                        try:
-                            creds_json = eval(creds_json_str)  # for development only!
-                            upload_to_google_sheets(df, sheet_name, creds_json)
-                        except Exception as e:
-                            st.error("Invalid credentials format.")
+with st.expander("☁️ Upload to Google Sheets"):
+    sheet_name = st.text_input("Google Sheet Name", value="Bank Transactions")
+    if st.button("Upload to Google Sheets"):
+        try:
+            credentials = Credentials.from_service_account_file(CLIENT_SECRET_FILE)
+            client = gspread.authorize(credentials)
+            st.text("✅ Authorized service account")
+
+            sheet = client.open(sheet_name).sheet1
+            st.text("✅ Opened sheet")
+
+            sheet.clear()
+            sheet.update([df.columns.values.tolist()] + df.values.tolist())
+            st.success("Uploaded to Google Sheets!")
+        except Exception as e:
+            st.error(f"Upload failed: {e}")
