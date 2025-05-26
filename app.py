@@ -6,11 +6,16 @@ from PyPDF2 import PdfReader
 from pdfminer.pdfparser import PDFSyntaxError
 import io
 import gspread
-from google.oauth2.service_account import Credentials
 import os
 from dotenv import load_dotenv
 import re
+from google.oauth2.service_account import Credentials
+import streamlit as st
 
+# Use credentials from Streamlit secrets
+credentials = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
 load_dotenv()  # Load environment variables from .env
 
 CLIENT_SECRET_FILE = os.getenv("GOOGLE_CLIENT_SECRET_PATH")
