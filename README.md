@@ -1,6 +1,12 @@
-# Bank Statements Analyzer
+# Bank Statements Analyzer – PDF to Google Sheets in Seconds
 
-This Streamlit app extracts transaction data from bank statement PDFs, analyzes the data, and uploads it to a Google Sheet.
+Blurb:
+Upload your bank statement PDF, and this tool extracts and exports your transaction data directly into Google Sheets — fast, accurate, and no manual entry required. Designed for small business owners, freelancers, and financial DIYers who want clean, structured data with one click.
+
+🔒 Safe & secure
+📄 Works with standard bank statement formats
+📤 Exports to Google Sheets instantly
+💡 Built with Python, Streamlit, and Google Cloud
 
 ## 🔧 Features
 - Extracts transactions using `pdfplumber`
