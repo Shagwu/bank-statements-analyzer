@@ -1,4 +1,5 @@
 # Bank Statements Analyzer – PDF to Google Sheets in Seconds
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bank-statements-analyzer-hjprysshagppudta988dre.streamlit.app/)
 
 Blurb:
 Upload your bank statement PDF, and this tool extracts and exports your transaction data directly into Google Sheets — fast, accurate, and no manual entry required. Designed for small business owners, freelancers, and financial DIYers who want clean, structured data with one click.
@@ -16,7 +17,6 @@ Upload your bank statement PDF, and this tool extracts and exports your transact
 
 ## 🚀 How to Run the App
 
-1. **Clone this repo**  
-   ```bash
-   git clone https://github.com/your-username/bank-statements-analyzer.git
-   cd bank-statements-analyzer
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bank-statements-analyzer-hjprysshagppudta988dre.streamlit.app/)
+
+Upload your bank statement PDF, and this tool extracts and exports your transaction data directly into Google Sheets — fast, accurate, and no manual entry required. Designed for small business owners, freelancers, and financial DIYers who want clean, structured data with one click.
